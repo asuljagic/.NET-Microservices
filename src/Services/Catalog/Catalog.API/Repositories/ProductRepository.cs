@@ -7,7 +7,7 @@ namespace Catalog.API.Repositories
     public class ProductRepository : IProductRepository
     {
         private readonly ICatalogContext _context;
-        private IProductRepository _productRepositoryImplementation;
+       // private IProductRepository _productRepositoryImplementation;
 
 
         public ProductRepository(ICatalogContext context)

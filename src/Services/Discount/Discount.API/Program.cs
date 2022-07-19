@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+using Discount.API.Extensions;
 using Discount.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+//var host = WebApplication.CreateBuilder(args).Build();
+
+//host.MigrateDatabase<Program>();
+
+
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -22,4 +30,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MigrateDatabase<Program>();
 app.Run();

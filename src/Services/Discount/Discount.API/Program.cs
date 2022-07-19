@@ -1,6 +1,7 @@
 using System.Runtime.Serialization;
 using Discount.API.Extensions;
 using Discount.API.Repositories;
+using Microsoft.AspNetCore.Mvc.ApplicationParts;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,7 @@ var app = builder.Build();
 
 //host.MigrateDatabase<Program>();
 
-
+app.MigrateDatabase<Program>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -30,5 +31,4 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.MigrateDatabase<Program>();
 app.Run();

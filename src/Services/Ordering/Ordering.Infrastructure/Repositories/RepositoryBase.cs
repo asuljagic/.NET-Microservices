@@ -14,7 +14,8 @@ namespace Ordering.Infrastructure.Repositories
     //EF Core DbContext implementation of IAsyncRepository interface
     public class RepositoryBase<T> : IAsyncRepository<T> where T : EntityBase
     {
-        private readonly OrderDbContext _dbcontext;
+        //need to be reachable in subclass OrderRepository
+        protected readonly OrderDbContext _dbcontext;
 
         public RepositoryBase(OrderDbContext dbcontext)
         {

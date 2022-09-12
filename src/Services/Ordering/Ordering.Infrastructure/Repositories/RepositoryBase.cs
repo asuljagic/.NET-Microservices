@@ -11,6 +11,7 @@ using Ordering.Infrastructure.Persistance;
 
 namespace Ordering.Infrastructure.Repositories
 {
+    //EF Core DbContext implementation of IAsyncRepository interface
     public class RepositoryBase<T> : IAsyncRepository<T> where T : EntityBase
     {
         private readonly OrderDbContext _dbcontext;
